@@ -93,7 +93,7 @@ Mais detalhes: [README da API](backend/README.md) (variáveis de ambiente, impor
 
 ## Conta de teste
 
-O mural e os detalhes podem ser vistos sem login. Para testar as funções do grupo no site publicado, peça uma conta de teste à autora; Nenhuma senha ou chave real fica neste repositório.
+O mural e os detalhes podem ser vistos sem login. Para testar as funções do grupo no site publicado, peça uma conta de teste à autora; para testar localmente, crie uma com `createsuperuser` (comando acima). Nenhuma senha ou chave real fica neste repositório.
 
 ## Estrutura
 
