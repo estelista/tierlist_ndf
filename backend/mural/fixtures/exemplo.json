@@ -1,0 +1,24 @@
+[
+  {"model": "mural.amigo", "pk": 1, "fields": {"apelido": "Ana", "icone_url": "/icones/ana.png"}},
+  {"model": "mural.amigo", "pk": 2, "fields": {"apelido": "Beto", "icone_url": "/icones/beto.png"}},
+  {"model": "mural.amigo", "pk": 3, "fields": {"apelido": "Caio", "icone_url": "/icones/caio.png"}},
+
+  {"model": "mural.filme", "pk": 1, "fields": {"tmdb_id": 680, "titulo": "Pulp Fiction", "ano_lancamento": 1994, "diretor": "Quentin Tarantino", "genero": "Crime, Suspense", "sinopse": "Histórias entrelaçadas de criminosos de Los Angeles.", "poster_url": ""}},
+  {"model": "mural.filme", "pk": 2, "fields": {"tmdb_id": 496243, "titulo": "Parasita", "ano_lancamento": 2019, "diretor": "Bong Joon-ho", "genero": "Suspense, Drama", "sinopse": "Uma família pobre se infiltra na casa de uma família rica.", "poster_url": ""}},
+  {"model": "mural.filme", "pk": 3, "fields": {"tmdb_id": null, "titulo": "Cats", "ano_lancamento": 2019, "diretor": "Tom Hooper", "genero": "Musical", "sinopse": "", "poster_url": ""}},
+  {"model": "mural.filme", "pk": 4, "fields": {"tmdb_id": 598, "titulo": "Cidade de Deus", "ano_lancamento": 2002, "diretor": "Fernando Meirelles", "genero": "Drama, Crime", "sinopse": "A vida na favela e a ascensão do crime no Rio de Janeiro.", "poster_url": ""}},
+  {"model": "mural.filme", "pk": 5, "fields": {"tmdb_id": 603, "titulo": "Matrix", "ano_lancamento": 1999, "diretor": "Lana Wachowski, Lilly Wachowski", "genero": "Ação, Ficção científica", "sinopse": "Um hacker descobre a verdadeira natureza da realidade.", "poster_url": ""}},
+  {"model": "mural.filme", "pk": 7, "fields": {"tipo": "serie", "tmdb_id": 1396, "titulo": "Breaking Bad", "ano_lancamento": 2008, "diretor": "Vince Gilligan", "genero": "Drama, Crime", "sinopse": "Um professor de química vira fabricante de drogas.", "poster_url": ""}},
+  {"model": "mural.filme", "pk": 6, "fields": {"tmdb_id": null, "titulo": "O Auto da Compadecida", "ano_lancamento": 2000, "diretor": "Guel Arraes", "genero": "Comédia", "sinopse": "", "poster_url": ""}},
+
+  {"model": "mural.sessao", "pk": 1, "fields": {"filme": 1, "sugerido_por": [1], "ano": 2024, "data_exibicao": null, "tier": "S"}},
+  {"model": "mural.sessao", "pk": 2, "fields": {"filme": 3, "sugerido_por": [2], "ano": 2024, "data_exibicao": null, "tier": "VTNC"}},
+  {"model": "mural.sessao", "pk": 3, "fields": {"filme": 2, "sugerido_por": [3], "ano": 2025, "data_exibicao": null, "tier": "A"}},
+  {"model": "mural.sessao", "pk": 4, "fields": {"filme": 4, "sugerido_por": [1, 3], "ano": 2025, "data_exibicao": null, "tier": "S"}},
+  {"model": "mural.sessao", "pk": 5, "fields": {"filme": 5, "sugerido_por": [2], "ano": 2026, "data_exibicao": "2026-04-05", "tier": "B"}},
+  {"model": "mural.sessao", "pk": 7, "fields": {"filme": 7, "sugerido_por": [2], "ano": 2025, "data_exibicao": null, "tier": "A"}},
+  {"model": "mural.sessao", "pk": 6, "fields": {"filme": 6, "sugerido_por": [3], "ano": 2027, "data_exibicao": "2027-12-17", "tier": null}},
+
+  {"model": "mural.comentario", "pk": 1, "fields": {"sessao": 2, "autor": 1, "texto": "Eu não deveria ter confiado na sua sugestão.", "criado_em": "2026-10-01T20:00:00-03:00"}},
+  {"model": "mural.comentario", "pk": 2, "fields": {"sessao": 4, "autor": 2, "texto": "Obra-prima do cinema nacional.", "criado_em": "2026-10-02T21:30:00-03:00"}}
+]

@@ -1,0 +1,20 @@
+# Bancos de dados e cópias locais: têm o histórico real e as contas do grupo
+*.sqlite3
+*.sqlite3-journal
+
+# Listas do histórico (têm os apelidos dos amigos)
+historico*.csv
+
+# Segredos e configurações locais
+.env
+.claude/
+CLAUDE.md
+
+# Gerados
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+dist/
+media/
+staticfiles/

@@ -1,0 +1,149 @@
+/* Base. A página é uma folha de adesivos: tudo que importa tem contorno escuro e borda
+   branca recortada, como os ícones desenhados dos amigos. Paleta: honeydew, pêssego,
+   coral, tomate e azul-céu, mais um azul bem escuro para a película. */
+:root {
+  --honeydew: #f6ffea;
+  --pessego: #ffde96;
+  --coral: #fa855a;
+  --tomate: #c93638;
+  --ceu: #62c4da;
+  --pelicula: #17283a; /* o tom escuro da película e da VTNC */
+
+  --mesa: var(--ceu); /* fundo, para a borda branca aparecer */
+  --papel: var(--honeydew);
+  --s: var(--pessego);
+  --a: var(--coral);
+  --b: var(--tomate);
+  --c: var(--ceu);
+  --vtnc: var(--pelicula);
+  --tinta: #2b1310; /* contorno dos desenhos */
+  --erro: #8a0f2f;
+
+  --borda: 4px solid #fff;
+  --sombra: 0 2px 5px rgb(43 19 16 / 0.38);
+
+  --texto: 'Familjen Grotesk Variable', system-ui, sans-serif;
+  --faixa-titulo: 'Bowlby One', 'Titan One', sans-serif;
+  --faixa-ano: 'Shrikhand', 'Titan One', serif;
+  --titulo: 'Titan One', 'Familjen Grotesk Variable', serif;
+
+  font-family: var(--texto);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--tinta);
+  background: var(--tinta);
+  scrollbar-gutter: stable;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+dl,
+dd,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+fieldset {
+  border: 0;
+  min-width: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+#root {
+  min-height: 100dvh;
+  background: var(--mesa);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.18em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: progress;
+  opacity: 0.6;
+}
+
+:focus-visible {
+  outline: 3px solid var(--tinta);
+  outline-offset: 3px;
+}
+
+.largura {
+  width: 100%;
+  max-width: 84rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 3vw, 2.5rem);
+}
+
+.so-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

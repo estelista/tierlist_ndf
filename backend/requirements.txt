@@ -1,0 +1,14 @@
+# Para instalar sem uv: pip install -r requirements.txt
+# Mesmas dependências do pyproject.toml.
+django>=5.0
+djangorestframework>=3.15
+djangorestframework-simplejwt>=5.3
+django-cors-headers>=4.3
+drf-spectacular>=0.27
+django-filter>=24.2
+pillow>=10.0
+requests>=2.31
+gunicorn>=27.0.1
+whitenoise>=6.12.0
+dj-database-url>=3.1.2
+psycopg[binary]>=3.3.9

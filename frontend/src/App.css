@@ -1,0 +1,1031 @@
+/* --- cabeçalho e rodapé */
+/* Letras de adesivo: contorno escuro e, em volta dele, a borda branca recortada. */
+.marca,
+.pagina h1,
+.faixa-letra .letra,
+.detalhe-tier {
+  -webkit-text-stroke: 0.14em var(--tinta);
+  paint-order: stroke fill;
+  word-spacing: 0.06em;
+  filter: drop-shadow(0.06em 0 #fff) drop-shadow(-0.06em 0 #fff) drop-shadow(0 0.06em #fff)
+    drop-shadow(0 -0.06em #fff) drop-shadow(0 2px 2px rgb(43 19 16 / 0.4));
+}
+
+.cabecalho-linha,
+.menu,
+.conta,
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cabecalho-linha {
+  gap: 0 1.5rem;
+  min-height: 5rem;
+}
+
+.marca {
+  font-family: var(--titulo);
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--s);
+  text-decoration: none;
+}
+
+.menu {
+  gap: 0.5rem 1.25rem;
+  margin-left: auto;
+  padding-block: 0.75rem;
+}
+
+.conta {
+  gap: 0.5rem;
+}
+
+.rodape {
+  background: var(--tinta);
+  color: #eadfd6;
+  font-size: 0.9375rem;
+  padding-block: 2.5rem;
+}
+
+/* --- botões e links */
+.botao,
+.link {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.botao {
+  justify-content: center;
+  padding: 0.25rem 1.25rem;
+  border: 3px solid #fff;
+  border-radius: 999px;
+  background: var(--tinta);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: var(--sombra);
+}
+
+.botao:hover {
+  background: var(--pelicula);
+}
+
+.link {
+  padding: 0;
+  border: 0;
+  background: none;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.link:hover {
+  text-decoration-thickness: 2px;
+}
+
+.link[aria-current='page'] {
+  text-decoration-thickness: 3px;
+}
+
+.perigo {
+  color: var(--erro);
+  font-weight: 600;
+}
+
+.acoes {
+  gap: 0.25rem 1.25rem;
+}
+
+.confirmacao {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 1rem;
+}
+
+.aviso {
+  color: var(--erro);
+  font-weight: 500;
+}
+
+/* --- ícones e capas */
+.icone {
+  flex: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: inline-grid;
+  grid-template: 100% / 100%; /* o desenho nunca passa da caixa */
+  place-items: center;
+}
+
+.icone-inicial {
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--s);
+  color: var(--tinta);
+  box-shadow: var(--sombra);
+  font-family: var(--titulo);
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.icone img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 1px rgb(43 19 16 / 0.4));
+}
+
+.indicadores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.capa {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 3px;
+  background: rgb(43 19 16 / 0.15);
+  /* a borda branca fica em volta, sem cobrir a capa */
+  box-shadow:
+    0 0 0 4px #fff,
+    0 4px 8px rgb(43 19 16 / 0.45);
+}
+
+.capa-vazia {
+  display: grid;
+  place-items: center;
+  padding: 0.5rem;
+  background: var(--tinta);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
+/* --- topo do mural: título do ano, próximas sessões e abas */
+.topo {
+  background: var(--tomate);
+  color: #fff;
+}
+
+/* Bordas de película: fileiras de furos em cima e embaixo do título. */
+.pelicula {
+  --furos: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='22'%3E%3Crect width='32' height='22' fill='%2317283a'/%3E%3Crect x='9' y='6' width='14' height='10' rx='3' fill='%2362c4da'/%3E%3C/svg%3E");
+  padding-block: 22px;
+  background:
+    var(--furos) left top / 32px 22px repeat-x,
+    var(--furos) left bottom / 32px 22px repeat-x;
+}
+
+/* Abas à esquerda, Entrar (ou a conta) à direita. No celular o menu sobe para cima das
+   abas, que continuam coladas na faixa S. */
+.abas-linha {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: flex-start; /* com wrap-reverse, flex-start é embaixo: as abas encostam na faixa S */
+  gap: 0.5rem 1.5rem;
+  margin-top: 0.75rem;
+}
+
+/* o menu flutua no vermelho, sem encostar na faixa S */
+.abas-linha .menu {
+  align-self: center;
+  padding-block: 0.5rem 0.875rem;
+}
+
+.topo-linha {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 1rem 2.5rem;
+  padding-block: 1.5rem;
+}
+
+.topo-titulo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* No computador, "2026, 44 títulos" desce até a altura da barra de rolagem das próximas
+   sessões (o centro do texto fica no centro da barra). */
+@media (min-width: 44.01rem) {
+  .topo-titulo h1 + p {
+    margin-top: auto;
+    translate: 0 0.5rem;
+  }
+}
+
+/* Título em cor chapada, sem contorno: uma fonte para o nome da lista, outra para o ano. */
+.topo h1 {
+  font-family: var(--faixa-titulo);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 1.1rem + 2.3vw, 3rem);
+  line-height: 1.05;
+  color: var(--honeydew);
+}
+
+.topo-ano {
+  display: block;
+  margin-top: 0.15em;
+  font-family: var(--faixa-ano);
+  font-size: 0.8em;
+  color: var(--pessego);
+}
+
+.topo .aviso {
+  color: var(--s);
+}
+
+.topo :focus-visible {
+  outline-color: #fff;
+}
+
+/* próximas e "Falta a tier" lado a lado quando cabem */
+.proximas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  align-content: start;
+  gap: 1.25rem;
+}
+
+/* sem isto, uma lista longa alarga a coluna em vez de rolar */
+.proximas > div {
+  min-width: 0;
+}
+
+.proximas h2 {
+  font-family: var(--titulo);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.proximas-vazio {
+  margin-top: 0.25rem;
+}
+
+/* Uma linha só, que rola para o lado quando há muitas sessões. A folga em volta evita cortar
+   a borda branca e o giro das capas. */
+.proximas-lista {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0.5rem -0.5rem 0;
+  padding: 0.5rem 0.5rem 0.875rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pessego) rgb(0 0 0 / 0.15);
+}
+
+.proxima {
+  flex: 0 0 min(15.5rem, 85%);
+  scroll-snap-align: start;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.proxima-capa {
+  flex: none;
+  width: 4rem;
+}
+
+.proxima-texto {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.proxima h3 {
+  font-size: 1.125rem;
+}
+
+.proxima h3 a {
+  text-decoration: none;
+}
+
+.proxima h3 a:hover {
+  text-decoration: underline;
+}
+
+.mural {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.abas {
+  display: flex;
+  gap: 0.25rem;
+  overflow-x: auto;
+}
+
+.aba {
+  flex: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.75rem 0.75rem 0 0;
+  background: #fff;
+  color: var(--tinta);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.aba:hover {
+  background: var(--mesa);
+}
+
+
+/* a aba aberta emenda na faixa S */
+.aba[aria-current] {
+  background: var(--s);
+}
+
+.topo .aba:focus-visible {
+  outline-color: var(--tinta);
+  outline-offset: -5px;
+}
+
+/* --- tier list */
+[data-tier='S'] {
+  --cor: var(--s);
+}
+[data-tier='A'] {
+  --cor: var(--a);
+}
+[data-tier='B'] {
+  --cor: var(--b);
+}
+[data-tier='C'] {
+  --cor: var(--c);
+}
+[data-tier='VTNC'] {
+  --cor: var(--vtnc);
+  --letra: var(--ceu); /* no azul quase preto, o contorno escuro sumiria */
+}
+[data-tier] {
+  --sobre: var(--tinta);
+}
+[data-tier='B'],
+[data-tier='VTNC'] {
+  --sobre: #fff;
+}
+
+.faixa {
+  background: var(--cor);
+  color: var(--sobre);
+}
+
+.faixa-linha {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 1rem 1.5rem;
+  min-height: 9rem;
+  padding-block: 2rem;
+}
+
+.faixa-letra {
+  font-family: var(--titulo);
+  font-weight: 400;
+  font-size: 6.5rem;
+  line-height: 1;
+  color: var(--letra, var(--cor));
+}
+
+/* A letra acompanha a rolagem enquanto a faixa está na tela. */
+.faixa-letra .letra {
+  position: sticky;
+  top: 1.5rem;
+  display: block;
+  width: fit-content;
+  rotate: -6deg;
+}
+
+.faixa:nth-child(even) .faixa-letra .letra {
+  rotate: 5deg;
+}
+
+/* O dedo da VTNC: altura, contorno e cor iguais aos das letras. */
+.dedo {
+  display: block;
+  width: auto;
+  height: 0.94em;
+  margin: 0.03em 0 0.03em -0.07em;
+  overflow: visible;
+}
+
+.dedo-forma {
+  fill: currentColor;
+  stroke: var(--tinta);
+  stroke-width: 19;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+
+.dedo-linha {
+  fill: none;
+  stroke: var(--tinta);
+  stroke-width: 7;
+  stroke-linecap: round;
+}
+
+.capas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6.75rem, 1fr));
+  gap: 1.5rem 1.375rem;
+  align-items: start;
+}
+
+.cartao-capa {
+  position: relative;
+}
+
+/* Uma pilha que sobe pela lateral da capa, com uma parte para fora. */
+.cartao .indicadores {
+  position: absolute;
+  right: -0.75rem;
+  bottom: -0.5rem;
+  flex-flow: column;
+  gap: 0;
+}
+
+.cartao .icone {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.cartao .icone + .icone {
+  margin-top: -0.875rem;
+}
+
+.cartao-capa,
+.proxima-capa {
+  display: block;
+  border-radius: 3px;
+  transition: rotate 0.15s ease-out;
+}
+
+/* o adesivo descola um pouco */
+.cartao-capa:hover,
+.proxima-capa:hover {
+  rotate: -3deg;
+}
+
+.cartao-capa:focus-visible {
+  outline-offset: 6px;
+}
+
+.faixa :focus-visible {
+  outline-color: var(--sobre);
+}
+
+/* --- detalhes da sessão */
+.detalhe {
+  width: min(60rem, 100vw - 2rem);
+  max-width: none;
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  border: 6px solid #fff;
+  border-radius: 14px;
+  background: var(--papel);
+  color: var(--tinta);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgb(43 19 16 / 0.5);
+}
+
+.detalhe[open] {
+  display: grid;
+  animation: abrir 0.18s ease-out;
+}
+
+.detalhe::backdrop {
+  background: rgb(23 40 58 / 0.85);
+}
+
+@keyframes abrir {
+  from {
+    transform: scale(0.97);
+  }
+}
+
+.detalhe-corpo {
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  min-height: 0;
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+}
+
+.fechar {
+  position: absolute;
+  top: 0.75rem;
+  right: 1.25rem;
+  z-index: 1;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--s);
+  box-shadow: var(--sombra);
+}
+
+.fechar svg {
+  width: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.detalhe-capa {
+  padding: 1.5rem;
+  background: var(--cor, var(--mesa));
+  color: var(--sobre, var(--tinta));
+}
+
+.detalhe-tier {
+  margin-top: 1rem;
+  font-family: var(--titulo);
+  font-size: 4.5rem;
+  line-height: 1;
+  width: fit-content;
+  color: var(--letra, var(--cor, var(--s)));
+  rotate: -5deg;
+}
+
+.detalhe-sem-tier {
+  font-size: 1.75rem;
+}
+
+.detalhe-texto {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  padding: 1.5rem 2rem 2rem;
+}
+
+.detalhe-texto h2 {
+  padding-right: 3rem;
+  font-family: var(--titulo);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.detalhe-texto h3 {
+  margin-bottom: 0.5rem;
+  font-family: var(--titulo);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.detalhe-texto section {
+  margin-top: 0.5rem;
+}
+
+.detalhe-resumo {
+  margin-top: -0.75rem;
+}
+
+.detalhe-mensagem {
+  grid-column: 1 / -1;
+  padding: 2rem 5rem 2rem 2rem;
+}
+
+.ficha {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.375rem 1.25rem;
+}
+
+.ficha dt {
+  font-weight: 600;
+}
+
+.ficha-amigos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem 1rem;
+}
+
+.amigo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sinopse {
+  max-width: 62ch;
+}
+
+.nota {
+  max-width: 62ch;
+}
+
+/* --- comentários */
+.comentarios {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.comentario {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+.comentario time {
+  font-size: 0.9375rem;
+}
+
+.comentario-texto {
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.fotos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.fotos li {
+  display: grid;
+  justify-items: start;
+}
+
+.fotos img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  border: var(--borda);
+  border-radius: 6px;
+  background: var(--mesa);
+  box-shadow: var(--sombra);
+}
+
+.form-comentario {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* --- páginas e formulários */
+.pagina {
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+  padding: 1.5rem clamp(1rem, 3vw, 2.5rem) 4rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.pagina-estreita {
+  max-width: 38rem;
+}
+
+.pagina h1 {
+  font-family: var(--titulo);
+  font-weight: 400;
+  font-size: 2.25rem;
+  color: var(--s);
+}
+
+.pagina form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.campo,
+.campo-senha {
+  display: grid;
+  gap: 0.375rem;
+  align-content: start;
+}
+
+.campo > label,
+.campo > legend,
+.campo-nome {
+  font-weight: 600;
+}
+
+.campo > legend {
+  margin-bottom: 0.375rem;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--tinta);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.campo textarea {
+  resize: vertical;
+}
+
+.campo [aria-invalid] {
+  border-color: var(--erro);
+}
+
+.campo-ajuda,
+.campo-erro {
+  font-size: 0.9375rem;
+}
+
+.campo-erro {
+  color: var(--erro);
+  font-weight: 600;
+}
+
+.opcao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  justify-self: start;
+}
+
+.opcao input {
+  width: 1.125rem;
+  height: 1.125rem;
+  accent-color: var(--tinta);
+}
+
+.opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.opcao-botao,
+.opcao-tier {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.25rem 1rem;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  background: var(--papel);
+  cursor: pointer;
+}
+
+.opcao-botao:has(:checked) {
+  background: var(--tinta);
+  color: #fff;
+}
+
+.opcao-tier {
+  min-width: 4rem;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--cor);
+  color: var(--sobre);
+  font-family: var(--titulo);
+  font-size: 1.375rem;
+}
+
+.opcao-tier:has(:checked) {
+  outline: 4px solid var(--tinta);
+  outline-offset: 2px;
+}
+
+.opcoes input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  min-height: 0;
+  opacity: 0;
+}
+
+.opcoes label:has(:focus-visible) {
+  box-shadow:
+    0 0 0 3px #fff,
+    0 0 0 6px var(--tinta);
+}
+
+.busca {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 9rem;
+  gap: 1rem;
+}
+
+.resultados {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.resultados button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  text-align: left;
+}
+
+.resultados button:hover {
+  background: var(--s);
+}
+
+.resultados .capa {
+  flex: none;
+  width: 3.5rem;
+  font-size: 0.5rem;
+}
+
+.titulo-escolhido {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.titulo-escolhido .capa {
+  flex: none;
+  width: 6rem;
+}
+
+.titulo-texto {
+  display: grid;
+}
+
+.pedidos {
+  display: grid;
+  gap: 1rem;
+}
+
+.pedido {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border: var(--borda);
+  border-radius: 10px;
+  background: var(--papel);
+  box-shadow: var(--sombra);
+}
+
+.pedido form {
+  gap: 1rem;
+}
+
+.mensagem:empty {
+  display: none;
+}
+
+/* --- celular */
+@media (max-width: 44rem) {
+  .marca {
+    font-size: 1.5rem;
+  }
+
+  .faixa-linha {
+    grid-template-columns: 2.75rem minmax(0, 1fr);
+    gap: 0.875rem;
+    min-height: 7rem;
+    padding-block: 1.25rem;
+  }
+
+  .faixa-letra {
+    font-size: 3.5rem;
+  }
+
+  .capas {
+    grid-template-columns: repeat(auto-fill, minmax(4.75rem, 1fr));
+    gap: 1.125rem 1rem;
+  }
+
+  .abas-linha {
+    column-gap: 0.5rem;
+  }
+
+  .aba {
+    padding-inline: 0.875rem;
+  }
+
+  .topo-linha {
+    grid-template-columns: minmax(0, 1fr);
+    padding-block: 1.25rem;
+  }
+
+  .cabecalho-linha {
+    gap: 0 1rem;
+    min-height: 0;
+  }
+
+
+
+  .detalhe {
+    width: 100vw;
+    max-height: 100dvh;
+    height: 100dvh;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .detalhe-corpo {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    max-height: 100dvh;
+  }
+
+  .detalhe-capa {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.25rem;
+    padding: 1rem;
+  }
+
+  .detalhe-capa .capa {
+    width: 8rem;
+  }
+
+  .detalhe-tier {
+    margin: 0;
+  }
+
+  .detalhe-texto {
+    padding: 1.25rem 1rem 2rem;
+  }
+
+  .detalhe-texto h2 {
+    padding-right: 0;
+    font-size: 1.625rem;
+  }
+
+  .ficha {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .ficha dd {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Adesivos menores na capa pequena. */
+@media (max-width: 44rem) {
+  .cartao .indicadores {
+    right: -0.5rem;
+  }
+
+  .cartao .icone + .icone {
+    margin-top: -0.625rem;
+  }
+
+  .cartao .icone {
+    width: 2.125rem;
+    height: 2.125rem;
+  }
+
+  .cartao .icone-inicial {
+    border-width: 2px;
+    font-size: 1rem;
+  }
+}
+
+/* O menu cabe numa linha: a conta fica só com o ícone. */
+@media (max-width: 44rem) {
+  .menu {
+    gap: 0.5rem 0.625rem;
+    font-size: 1rem;
+  }
+
+  .menu .icone {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .menu .botao {
+    padding-inline: 0.75rem;
+  }
+
+  .conta-nome {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+}
