@@ -61,14 +61,11 @@ Requisitos: Python 3.10+ e [uv](https://docs.astral.sh/uv/).
 
 ```bash
 uv sync
-uv run python manage.py makemigrations mural
 uv run python manage.py migrate
 uv run python manage.py loaddata exemplo
 uv run python manage.py createsuperuser
 uv run python manage.py runserver
 ```
-
-> Se você já tinha rodado `makemigrations` numa versão anterior, apague antes `db.sqlite3` e os arquivos `mural/migrations/0*.py` (mantenha o `__init__.py`). No PowerShell: `Remove-Item db.sqlite3, mural\migrations\0*.py`.
 
 - API: http://127.0.0.1:8000/api/
 - Swagger: http://127.0.0.1:8000/api/docs/
